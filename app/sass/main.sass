@@ -1,0 +1,418 @@
+@import 'fonts'
+@import 'libs'
+@import 'vars'
+
+// Default
+*::-webkit-input-placeholder
+	color: #666
+	opacity: 1
+*:-moz-placeholder
+	color: #666
+	opacity: 1
+*::-moz-placeholder
+	color: #666
+	opacity: 1
+*:-ms-input-placeholder
+	color: #666
+	opacity: 1
+
+html, body
+	height: 100%
+	overflow: hidden
+	background-color: $dark
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.75
+	font-family: $default-font
+	font-style: normal
+	font-weight: normal
+	overflow-x: hidden
+	opacity: 1
+	color: $gray
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+
+a
+	color: $gray
+	text-decoration: none
+	&:hover, &:active
+		color: $gray
+		text-decoration: none
+
+p
+	margin: 0
+	padding: 0
+	line-height: 1.3em
+	font-size: 14px
+
+.h1
+	font-family: $marianna-font
+	font-size: 120px
+	color: $lightgray
+	white-space: nowrap
+
+.h2
+	font-weight: 900
+	font-style: italic
+	font-size: 50px
+	margin: 0
+	padding: 0
+	line-height: 1em
+	color: $accent
+	position: relative
+	white-space: nowrap
+	&::after
+		content: ''
+		position: absolute
+		bottom: -5px
+		left: 0
+		background-color: $accent
+		height: 2px
+		width: 70%
+
+.button-wrap
+	width: 100%
+	text-align: center
+
+.button
+	display: inline-block
+	border: none
+	background-color: $lightgray
+	color: $dark
+	font-weight: 600
+	font-style: italic
+	padding: 5px 30px
+	border-bottom: $darkgray 3px solid
+	transition: all .25s ease
+	text-decoration: none
+	border-radius: 2px
+	margin: auto
+	outline: none
+	cursor: pointer
+	&:hover, &:focus
+		background-color: lighten($lightgray, 10)
+		border-bottom: lighten($darkgray, 15) 3px solid
+	&:active
+		background-color: darken($lightgray, 10)
+		border-bottom: darken($darkgray, 15) 3px solid
+
+// Header
+.main-head
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	z-index: 3
+	background-color: rgba($dark, .5)
+	cursor: url(../img/cursor-move.png) 6 1, move
+	.top-line
+		color: $lightgray
+		padding-top: 10px 
+		padding-bottom: 20px
+		padding-left: 50px
+		border-bottom: 2px solid rgba($accent, .9)
+		position: relative
+		.logo
+			font-family: $marianna-font
+			font-weight: bold
+			font-size: 35px
+			vertical-align: bottom
+			line-height: 1
+			color: $lightgray
+			img
+				width: 50px
+				height: auto
+			span
+				vertical-align: bottom
+		.phone
+			position: absolute
+			top: 32px
+			right: 50px
+			font-size: 23px
+			font-family: firasans
+			font-weight: normal
+			font-style: italic
+			line-height: 1.4
+			white-space: nowrap
+			.fa
+				color: darken($darkgray, 10)
+				font-size: 33px
+				vertical-align: bottom
+				margin-right: 5px
+
+// Slider
+.slider
+	min-height: 655px
+	height: 100vh
+	&-item
+		position: relative
+		height: 100vh
+		background-size: cover
+		background-position: center
+		video
+			min-width: 100%
+			min-height: 100%
+			width: auto
+			height: auto
+			position: absolute
+			left: 50%
+			transform: translate(-50%, 0)
+		&::before, &::after
+			content: ''
+			position: absolute
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+		&::before
+			background-color: $dark
+			opacity: .5
+		&::after
+			background: url(../img/slider-mask-2-3.png)
+			opacity: .2
+		&-bg
+			position: absolute
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+			z-index: 2
+			background-image: url(../img/slider-mask-top.png)
+			background-size: cover
+			background-position: center
+			opacity: .7
+.owl-item
+	cursor: url(../img/cursor-move.png) 6 1, move
+.owl-grab
+	.owl-item
+		cursor: url(../img/cursor-grab.png) 6 1, move
+
+// Main name
+.owl-item
+	.header-flex
+		z-index: 5
+		display: flex
+		height: 100%
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+	&:first-child
+		.header-flex
+			padding-top: 5%
+			.flex-center
+				margin: auto
+	&:last-child
+		.header-flex
+			overflow-y: auto
+			.flex-center
+				padding-top: 95px
+				// padding-bottom: 75px
+				margin: auto
+			.header-flex
+				padding: 0
+
+// Animated hand
+.hand
+	&-holder
+		position: absolute
+		bottom: 3%
+		left: 50%
+		width: 165px
+		height: 50px
+		transform: translate(-50%, 0)
+		z-index: 3
+		cursor: url(../img/cursor-move.png) 6 1, move
+		.hand
+			position: absolute
+			overflow: hidden
+			height: 50px
+			width: 33px
+			text-align: left
+			left: 0
+			svg
+				position: absolute
+				top: 0
+			path
+				fill: $accent
+
+// Social block
+.social-wrap
+	display: flex
+	z-index: 3
+	position: absolute
+	top: 0
+	left: 0
+	height: 100%
+	padding-top: 30px
+	cursor: url(../img/cursor-move.png) 6 1, move
+	ul, li
+		margin: 0
+		padding: 0
+		list-style-type: none
+	ul
+		margin: auto 15px
+	a
+		color: $gray
+		font-size: 18px
+		display: block
+		height: 35px
+		width: 35px
+		line-height: 34px
+		text-align: center
+		margin: 20px 0
+		border-radius: 10em
+		border: $gray 2px solid
+		opacity: .9
+		transition: all .3s ease
+		&:hover
+			background-color: $accent
+			color: $dark
+			border-color: $accent
+	&::after
+		margin-top: 100px
+		content: ''
+		bottom: 0
+		right: 0
+		width: 2px
+		height: 100%
+		background-color: rgba($accent, .8)
+
+// Mute block
+.mute
+	background: url(../img/volume-on.gif) no-repeat
+	width: 40px
+	height: 43px
+	display: block
+	cursor: pointer
+	margin: 0 auto
+	position: absolute
+	right: 10px
+	bottom: 10px
+	z-index: 7
+	&.disable:before
+		content: ''
+		width: 100%
+		display: inline-block
+		height: 3px
+		-webkit-transform: rotate(-45deg)
+		-moz-transform: rotate(-45deg)
+		transform: rotate(-45deg)
+		background-color: $accent
+		position: absolute
+		top: 27px
+
+// Price block
+.price
+	font-weight: 600
+	font-style: italic
+	font-size: 30px
+	color: $lightgray
+	margin-top: 10px
+	white-space: nowrap
+
+// Form properties
+.callback
+	background: rgba($dark, .7)
+	max-width: 300px
+	padding: 20px 25px 30px
+	color: $gray
+	border-bottom: solid 4px $accent
+	display: inline-block
+	margin-top: 10px
+	position: relative
+	text-align: left
+	z-index: 5
+	margin-bottom: 75px
+	p
+		font-style: italic
+		font-size: 12px
+		line-height: 1.2
+		margin-bottom: 20px
+	.form-head
+		font-style: italic
+		font-size: 20px
+		color: $lightgray
+	input
+		display: block
+		width: 100%
+		border: 1px solid lighten($dark, 10)
+		border-radius: 3px
+		box-shadow: 0 -3px $gray
+		background-color: $dark
+		outline: none
+		padding: 5px 15px
+		transition: all .5s ease
+		color: $gray
+		margin-bottom: 20px
+		font-size: 14px
+		font-weight: 300
+		font-style: italic
+		&:focus, &:active
+			box-shadow: 0 -5px $accent
+		&::-webkit-input-placeholder
+			color: $gray
+			opacity: 1
+		&::-moz-input-placeholder
+			color: $gray
+			opacity: 1
+		&::-ms-input-placeholder
+			color: $gray
+
+.success
+	display: none
+	position: absolute
+	top: 50%
+	left: 50%
+	transform: translate(-50%, -50%)
+	white-space: nowrap
+	text-transform: uppercase
+	font-weight: 600
+	font-style: italic
+	font-size: 20px
+	z-index: 10
+	color: $lightgray
+	span
+		margin: auto
+	& ~ *
+		transition: all .5s ease
+	&.active
+		& ~ *
+			opacity: .5
+			filter: blur(60px)
+
+// Parallax background
+.slider-item 
+	.fon-back
+		width: 100%
+		height: 100%
+		position: absolute
+		top: 0
+		left: 0
+		z-index: 3
+		opacity: .8
+		&.slide-decor-1
+			background: url(../img/big-dots-decor.png) no-repeat 0 0
+		&.slide-decor-2
+			background: url(../img/dots-decor.png) no-repeat 100% 0
+
+.flame-bg
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	background-size: cover
+	background-position: bottom left
+
+// Image for small devices
+.img-small
+	margin-bottom: 20px
+
+@import 'media'
